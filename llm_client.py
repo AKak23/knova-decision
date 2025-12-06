@@ -17,7 +17,7 @@ except ImportError as exc:
         ) from inner_exc
 
 
-API_KEY = "sk-XXXXXXXXX"  # 可直接填写真实 key，注意不要提交到仓库
+API_KEY = "sk-XXXXX"  # 可直接填写真实 key，注意不要提交到仓库
 
 
 class LLMClient:

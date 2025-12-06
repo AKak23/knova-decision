@@ -12,6 +12,7 @@ from feature_two import generate_strategies
 from feature_three import generate_numeric_inputs
 from feature_four import generate_sensitivity_factors
 from feature_five import predict_metrics
+from feature_six import infer_impact_scope
 from metrics_catalog import DECISION_METRICS
 
 
@@ -102,9 +103,22 @@ def test_feature_five() -> None:
     pprint(predictions)
 
 
+def test_feature_six() -> None:
+    impact = infer_impact_scope(
+        customer="个人市场-全球通用户",
+        description=(
+            "全球通是移动高端用户品牌，服务的客群通常具有较高消费能力和商务需求，"
+            "对网络质量、客户服务和专属权益有较高要求和期待。"
+        ),
+    )
+    print("\n=== 功能六：影响范围 ===")
+    pprint(impact)
+
+
 if __name__ == "__main__":
     test_feature_one()
     test_feature_two()
     test_feature_three()
     test_feature_four()
     test_feature_five()
+    test_feature_six()
